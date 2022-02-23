@@ -1,0 +1,55 @@
+﻿@page
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4">Users</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <p>All users list.</p>
+        </div>
+        <div class="col-6">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <button class="btn btn-light border-0 rounded-circle text-center" disabled>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-light border-0 rounded-circle text-center" disabled>
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-borderless table-hover border-0"
+                   data-toggle="table"
+                   data-single-select="true"
+                   data-click-to-select="true">
+                <thead>
+                    <tr>
+                        <th data-field="state" data-checkbox="false"></th>
+                        <th scope="col">#</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        <th>1</th>
+                        <td>jonathanjbm@outlook.es</td>
+                        <td>Male</td>
+                        <td>Active</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@page
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row vh-100 justify-content-center align-items-center">
+            <div class="col-6 text-center">
+                <div class="card bg-white border rounded p-3">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-6 text-center">
+                                <span class="font-weight-bold h4">Welcome</span>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-6">
+                                <label for="txtUser">User</label>
+                                <input type="text" class="form-control" id="txtUser"/>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-2">
+                            <div class="col-6">
+                                <label for="txtPassword">Password</label>
+                                <input type="password" class="form-control" id="txtPassword"/>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-6">
+                                <button class="btn btn-success btn-block" id="btnLogin">Log in</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/js/login.js" asp-append-version="true"></script>
+</body>
+</html>
