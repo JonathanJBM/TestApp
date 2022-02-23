@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:16469",
+      "sslPort": 44323
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "Login",
+      "environmentVariables": {
+        "DBCONN": "server=02XM8_LAP\\SQLEXPRESS;user id=TestApp;password=testapp123;initial catalog=TestApp",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Test.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Login",
+      "environmentVariables": {
+        "DBCONN": "server=02XM8_LAP\\SQLEXPRESS;user id=TestApp;password=testapp123;initial catalog=TestApp",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "dotnetRunMessages": "true"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:5001/Login",
+      "environmentVariables": {
+        "DBCONN": "server=02XM8_LAP\\SQLEXPRESS;user id=TestApp;password=testapp123;initial catalog=TestApp",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:5001;http://localhost:5000"
+      },
+      "distributionName": ""
+    }
+  }
+}

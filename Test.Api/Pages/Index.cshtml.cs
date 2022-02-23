@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Test.Pages
 {
@@ -16,10 +12,12 @@ namespace Test.Pages
         {
             _logger = logger;
         }
-
         public void OnGet()
         {
-
+            if (HttpContext.Session.GetString("User") == null)
+            {
+                Response.Redirect("/Login");
+            }
         }
     }
 }

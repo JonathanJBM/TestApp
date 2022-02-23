@@ -1,0 +1,161 @@
+﻿@page
+@model UsersModel
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4">Users</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <p>All users list.</p>
+        </div>
+        <div class="col-6">
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <button class="btn btn-light border-0 rounded-circle text-center" data-toggle="modal" data-target="#newUserModal" id="btnNewUser">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-light border-0 rounded-circle text-center" data-toggle="modal" data-target="#newUserModal" id="btnEditUser" disabled>
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-light border-0 rounded-circle text-center" id="btnDelUser" disabled>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table id="usersTable"
+                   class="table table-borderless table-hover border-0"
+                   data-single-select="true"
+                   data-click-to-select="true"
+                   data-pagination="true"
+                   data-page-size="5"
+                   data-loading-template="loadingTemplate">
+                <thead>
+                    <tr>
+                        <th data-field="state" data-checkbox="true"></th>
+                        <th data-field="id">#</th>
+                        <th data-field="username">Username</th>
+                        <th data-field="email">Email</th>
+                        <th data-field="genre">Genre</th>
+                        <th data-field="status" data-formatter="statusFormatter">Status</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="newUserModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" data-dimiss="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">New user</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="email-icon"><i class="fa-solid fa-at"></i></span>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-icon" id="txtEmail">
+                                    <div id="txtEmailFeedback" class="invalid-feedback">
+                                        Invalid email.
+                                        example@domain.com
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="username-icon"><i class="fa-solid fa-user"></i></span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="username-icon" id="txtUsername">
+                                    <div id="txtUsernameFeedback" class="invalid-feedback">
+                                        Invalid username.
+                                        <ul>Minimum 7 characters</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="password-icon"><i class="fa-solid fa-key"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-icon" id="txtPassword">
+                                    <div id="txtPasswordFeedback" class="invalid-feedback">
+                                        Invalid password.
+                                        <ul>Minimum 10 characters</ul>
+                                        <ul>Contain at least 1 capital letter</ul>
+                                        <ul>Contain at least 1 lowercase</ul>
+                                        <ul>Contain at least 1 symbol</ul>
+                                        <ul>Contain at least 1 number</ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="re-password-icon"><i class="fa-solid fa-key me-2"></i> Confirmation</span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="re-password-icon" id="txtRePassword">
+                                    <div id="txtPasswordFeedback" class="invalid-feedback">
+                                        The password does not match.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Select genre</label>
+                                <div class="form-check">
+                                    <input class="form-check-input sex-radio" type="radio" id="maleRadio" name="sexRadio" value="Masculino">
+                                    <label class="form-check-label" for="maleRadio">
+                                        Masculino
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input sex-radio" type="radio" id="femaleRadio" name="sexRadio" value="Femenino">
+                                    <label class="form-check-label" for="femaleRadio">
+                                        Femenimo
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCancelUser">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="btnSaveUser">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="~/js/users.js" asp-append-version="true"></script>
