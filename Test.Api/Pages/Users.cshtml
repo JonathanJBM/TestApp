@@ -7,18 +7,18 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6">
+    <div class="row justify-content-between">
+        <div class="col-auto">
             <p>All users list.</p>
         </div>
-        <div class="col-6">
+        <div class="col-auto">
             <div class="row justify-content-end">
                 <div class="col-auto">
                     <button class="btn btn-light border-0 rounded-circle text-center" data-toggle="modal" data-target="#newUserModal" id="btnNewUser">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto p-0">
                     <button class="btn btn-light border-0 rounded-circle text-center" data-toggle="modal" data-target="#newUserModal" id="btnEditUser" disabled>
                         <i class="fa-solid fa-pencil"></i>
                     </button>
@@ -47,7 +47,7 @@
                         <th data-field="username">Username</th>
                         <th data-field="email">Email</th>
                         <th data-field="genre">Genre</th>
-                        <th data-field="status" data-formatter="statusFormatter">Status</th>
+                        <th data-field="status" data-formatter="statusFormatter" data-width="100">Status</th>
                     </tr>
                 </thead>
             </table>
